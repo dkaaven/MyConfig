@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 
 # Detect Linux Distro
 if [ -f /etc/os-release ]; then
