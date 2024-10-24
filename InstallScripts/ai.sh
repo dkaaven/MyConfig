@@ -4,7 +4,7 @@
 sudo pacman -S nvidia-utils --no-confirm
 
 # Install ollama
-curl -fsSL https://ollama.com/install.sh | sh
+sudo pacman -S ollama-cuda --no-confirm
 
 # Install models
 ollama pull llama3.1
