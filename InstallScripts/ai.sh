@@ -39,5 +39,9 @@ go install github.com/danielmiessler/fabric@latest
 fabric --setup
 
 # Docker OpenWebUI
-docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+# This failed 
+# docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+# This worked, source: https://tech.mrleong.net/self-host-llama-3-on-arch-linux
+docker run -d --network=host -v open-webui:/app/backend/data -e PORT=8080 -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
 
