@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Install nvidia-utils
+sudo pacman -S nvidia-utils --no-confirm
+
 # Install ollama
 curl -fsSL https://ollama.com/install.sh | sh
 
